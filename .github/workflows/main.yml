@@ -42,6 +42,5 @@ jobs:
           echo "PYTHONPATH=$PYTHONPATH"
       - name: Test with pytest
         run: |
-          #pip install pytest
-          #pytest test.py
-          python /home/runner/work/cicd-demo/cicd-demo/test.py
+          pip install pytest
+          pytest /home/runner/work/cicd-demo/cicd-demo/test.py
