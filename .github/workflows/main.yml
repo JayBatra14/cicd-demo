@@ -36,8 +36,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Add test module directory to Python path
+        run: |
+          export PYTHONPATH=$PYTHONPATH:/home/runner/work/cicd-demo/cicd-demo/
+          echo "PYTHONPATH=$PYTHONPATH"
       - name: Test with pytest
         run: |
-          pip install pytest
-          export PYTHONPATH=$PYTHONPATH:$(pwd)
-          pytest test.py
+          #pip install pytest
+          #pytest test.py
+          python /home/runner/work/cicd-demo/cicd-demo/test.py
